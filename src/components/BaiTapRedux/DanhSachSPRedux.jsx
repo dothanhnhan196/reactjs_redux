@@ -22,9 +22,6 @@ export default class DanhSachSPRedux extends Component {
                 <div className="row">
                     {this.renderSanPham()}
                 </div>
-                <div className="row">
-
-                </div>
             </div>
         )
     }

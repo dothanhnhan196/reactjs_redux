@@ -28,13 +28,44 @@ export const GioHangReducer = (state = stateGioHang, action) => {
             } else {
                 gioHangCapNhat.push(action.spGioHang)
             }
-            state.gioHang = gioHangCapNhat;
+            // gán giỏ hàng mới cho state.gioHang => render lại giao diện
+            state.gioHang = gioHangCapNhat
             return { ...state }
         }
         case 'SAN_PHAM_CHI_TIET': {
             state.spChiTiet = action.spChiTiet
-            return {...state}
+            return { ...state }
         }
+        case 'XOA_GIO_HANG': {
+            // Xóa theo index
+            // let gioHangCapNhat = [...state.gioHang]
+            // gioHangCapNhat.splice(action.index, 1)
+            // state.gioHang = gioHangCapNhat
+            // return { ...state }
+
+            // xóa theo maSP
+            let gioHangCapNhat = [...state.gioHang]
+            let index = gioHangCapNhat.findIndex(spGH => spGH.maSP === action.maSP)
+            if (index !== -1) {
+                gioHangCapNhat.splice(index, 1)
+            }
+            state.gioHang = gioHangCapNhat
+            return { ...state }
+        }
+        case 'TANG_GIAM_SL': {
+            let gioHangCapNhat = [...state.gioHang]
+            let index = gioHangCapNhat.findIndex(spGH => spGH.maSP === action.maSP)
+            if (action.tangGiam) {
+                gioHangCapNhat[index].soLuong += 1
+            } else {
+                if (gioHangCapNhat[index].soLuong > 1) {
+                    gioHangCapNhat[index].soLuong -= 1
+                }
+            }
+            state.gioHang = gioHangCapNhat
+            return { ...state }
+        }
+
         default:
             break;
     }

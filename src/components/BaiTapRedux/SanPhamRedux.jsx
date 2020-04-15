@@ -40,16 +40,7 @@ const mapDispatchToProps = (dispatch) => {
             // dùng hàm dispatch để đưa dữ liệu lên reducer
             dispatch(action)
         },
-        chiTietSanPham: (sanPham) => {
-            const spChiTiet = {
-                hinhAnh: sanPham.hinhAnh,
-                manHinh: sanPham.manHinh,
-                heDieuHanh: sanPham.heDieuHanh,
-                cameraTruoc: sanPham.cameraTruoc,
-                cameraSau: sanPham.cameraSau,
-                ram: sanPham.ram,
-                rom: sanPham.rom
-            }
+        chiTietSanPham: (spChiTiet) => {
             const action = {
                 type: 'SAN_PHAM_CHI_TIET',
                 spChiTiet
