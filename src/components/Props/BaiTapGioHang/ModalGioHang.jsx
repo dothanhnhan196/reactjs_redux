@@ -11,9 +11,9 @@ export default class ModalGioHang extends Component {
                     <td><img src={spGH.hinhAnh} alt="imgModal" width={70} height={70} /></td>
                     <td>{spGH.tenSP}</td>
                     <td>
-                        <button className="mr-1" onClick={() => tangGiamSoLuong(spGH.maSP, true)}>+</button>
+                        <button className="mr-1 btn btn-info" onClick={() => tangGiamSoLuong(spGH.maSP, true)}>+</button>
                         {spGH.soLuong}
-                        <button className="ml-1" onClick={() => tangGiamSoLuong(spGH.maSP, false)}>-</button>
+                        <button className="ml-1 btn btn-info" onClick={() => tangGiamSoLuong(spGH.maSP, false)}>-</button>
                     </td>
                     <td>{spGH.giaBan.toLocaleString()}</td>
                     <td>{(spGH.soLuong * spGH.giaBan).toLocaleString()}</td>
@@ -52,7 +52,7 @@ export default class ModalGioHang extends Component {
                                             <td>Số lượng</td>
                                             <td>Đơn giá</td>
                                             <td>Thành tiền</td>
-                                            <td>Tính năng</td>
+                                            <td></td>
                                         </tr>
                                     </thead>
                                     <tbody>
