@@ -1,25 +1,50 @@
 import React, { Component } from 'react'
+import './BaiTapBurger.css'
+import { connect } from 'react-redux'
 
-export default class BurgerComponent extends Component {
+class BurgerComponent extends Component {
+
+    renderBreadMid = () => {
+        let { burger } = this.props
+        let content = []
+        for (let propBurger in burger) {
+            let breadMid = []
+            for (let i = 0; i < burger[propBurger]; i++) {
+                breadMid.push(<div key={i} className={propBurger}></div>)
+            }
+            content.push(breadMid)
+        }
+        return content
+
+        // return Object.entries(burger).map(([propBurger, value], index) => { // propBurger là tên thuộc tính || value là giá trị
+        //     let breadMid = []
+        //     for (let i = 0; i < value; i++) {
+        //         breadMid.push(<div key={i} className={propBurger}></div>)
+        //     }
+        //     return breadMid
+        // })
+
+    }
+
     render() {
         return (
             <div className="col-7">
-                <h3 className="text-center mb-3">Cửa hàng burger</h3>
+                <h3 className="text-center mb-3">Bánh burger của bạn</h3>
                 <div className="box">
-                    <div className="bread-top">
-                        <div className="seeds" />
-                        <div className="seeds2" />
-                    </div>
-                    <div className="salad" />
-                    <div className="salad" />
-                    <div className="bacon" />
-                    <div className="cheese" />
-                    <div className="cheese" />
-                    <div className="meat" />
-                    <div className="meat" />
-                    <div className="bread-bottom" />
+                    <div className="bread-top"></div>
+                    {this.renderBreadMid()}
+                    <div className="bread-bottom"></div>
                 </div>
             </div>
         )
     }
 }
+
+const mapStateToProp = (state) => {
+    return {
+        burger: state.BurgerReducer.burger
+    }
+}
+
+
+export default connect(mapStateToProp, null)(BurgerComponent)

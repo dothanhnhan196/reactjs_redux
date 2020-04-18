@@ -14,8 +14,6 @@ function App() {
       <BaiTapGioHangRedux />
       <hr />
       <br />
-      <br />
-      <br />
       <BaiTapBurger />
       
     </div>
