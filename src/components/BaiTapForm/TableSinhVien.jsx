@@ -6,8 +6,8 @@ class TableSinhVien extends Component {
     state
 
     renderSinhVien = () => {
-        let { mangSinVien } = this.props;
-        return mangSinVien.map((sinhVien, index) => {
+        let { mangSinhVien } = this.props;
+        return mangSinhVien.map((sinhVien, index) => {
             return (
                 <tr key={index}>
                     <td>{sinhVien.maSV}</td>
@@ -42,7 +42,7 @@ class TableSinhVien extends Component {
 
 const mapStateToProp = (state) => {
     return {
-        mangSinVien: state.QuanLiSinhVienReducer.mangSinVien
+        mangSinhVien: state.QuanLiSinhVienReducer.mangSinhVien
     }
 }
 

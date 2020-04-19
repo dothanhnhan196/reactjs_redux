@@ -1,6 +1,6 @@
 import React from 'react';
-import BaiTapGioHangRedux from './components/BaiTapRedux/BaiTapGioHangRedux';
-import BaiTapBurger from './components/BaiTapBurgerRedux/BaiTapBurger';
+// import BaiTapGioHangRedux from './components/BaiTapRedux/BaiTapGioHangRedux';
+// import BaiTapBurger from './components/BaiTapBurgerRedux/BaiTapBurger';
 import BaiTapForm from './components/BaiTapForm/BaiTapForm';
 // import Layout from './components/BaiTap/Layout';
 // import BaiTapComponent from './components/BaiTapComponents/BaiTapComponent';
@@ -12,12 +12,12 @@ function App() {
       {/* <Layout /> */}
       {/* <BaiTapComponent /> */}
       {/* <BaiTapGioHang /> */}
-      <BaiTapGioHangRedux />
+      {/* <BaiTapGioHangRedux />
       <hr />
       <br />
       <BaiTapBurger />
       <hr />
-      <br />
+      <br /> */}
       <BaiTapForm />
     </div>
 
